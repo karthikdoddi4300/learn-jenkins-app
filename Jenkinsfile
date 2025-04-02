@@ -19,9 +19,9 @@ pipeline {
                 ls -la  
                 '''
             }
-            */
+            
         }
-        
+        */
         
         stage('test'){
             agent{
@@ -38,8 +38,8 @@ pipeline {
             '''
             }
         }
-    }
-     stage('E2E'){
+    
+        stage('E2E'){
             agent{
                 docker{
                     image 'mcr.microsoft.com/playwright:v1.39.0-jammy'
@@ -55,7 +55,7 @@ pipeline {
             '''
             }
         }
-    
+    }
     post{
         always{
             junit 'test-results/junit.xml'

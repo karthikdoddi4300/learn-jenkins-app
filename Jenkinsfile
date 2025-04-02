@@ -20,11 +20,13 @@ pipeline {
             }
         }
         stage('test'){
+            steps{
             sh'''
             echo "test stage"
             #cat build/index.html
             #npm test
             '''
+            }
         }
     }
 }
